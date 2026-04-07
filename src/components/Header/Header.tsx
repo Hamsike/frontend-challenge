@@ -1,15 +1,12 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/redux"
 import styles from "./Header.module.css"
 import type { TabType } from "@/types/tab"
-import { setActiveTab } from "@/slices/tabSlice"
 
-export const Header: React.FC = () => {
-  const dispatch = useAppDispatch()
-  const tabActive = useAppSelector(state => state.tab.activeTab)
+interface HeaderProps {
+  tabActive: string
+  handleChangeActive: (tab: TabType) => void
+}
 
-  const handleChangeActive = (tab: TabType) => {
-    dispatch(setActiveTab(tab))
-  }
+export const Header: React.FC<HeaderProps> = ({ tabActive, handleChangeActive }) => {
 
   return (
     <div className={styles.header}>

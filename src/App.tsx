@@ -1,16 +1,16 @@
+import { useState } from 'react'
 import './App.css'
 import { CatFavorites } from './components/CatFavorites/CatFavorites'
 import CatGallery from './components/CatGallery/CatGallery'
 import { Header } from './components/Header/Header'
-import { useAppSelector } from './hooks/redux'
+import type { TabType } from './types/tab'
 
 function App() {
-  const tabActive = useAppSelector(state => state.tab.activeTab)
-
+  const [active, setActive] = useState<TabType>('all')
   return (
     <>
-      <Header/>
-      {tabActive === 'all' ? <CatGallery/> : <CatFavorites/>}
+      <Header tabActive={active} handleChangeActive={setActive}/>
+      {active === 'all' ? <CatGallery/> : <CatFavorites/>}
     </>
   )
 }

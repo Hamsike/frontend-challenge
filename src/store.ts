@@ -1,9 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import tabReducer from '@/slices/tabSlice'
 import favoritesReducer from '@/slices/favouritesSlice'
 
 const rootReducer = combineReducers({
-  tab: tabReducer,
   favorites: favoritesReducer
 })
 

@@ -8,7 +8,7 @@
 }
 
 .catsGrid {
-  padding: 62px;
+  padding: 50px 60px;
   display: grid;
   grid-template-columns: repeat(auto-fill, 225px);
   align-items: start;
@@ -88,7 +88,7 @@
 
 @media (max-width: 768px) {
   .catsGrid {
-    padding: 30px;
+    padding: 50px 30px;
     gap: 20px;
   }
   
@@ -107,7 +107,7 @@
 
 @media (max-width: 480px) {
   .catsGrid {
-    padding: 20px;
+    padding: 50px 20px;
     gap: 15px;
   }
   

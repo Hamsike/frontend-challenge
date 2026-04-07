@@ -1,10 +1,19 @@
 .header {
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   max-height: 64px;
+  gap: 2px;
   background-color: #2196F3;
   padding-left: 62px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+
+  @media (max-width: 767px) {
+    justify-content: center;
+    padding-left: 0;
+  } 
 }
 
 .button {
@@ -15,6 +24,7 @@
   padding: 23px 0;
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
+  border-radius: 1rem;
   transition: color 0.5s ease, background-color 0.5s ease;
 }
 
@@ -32,6 +42,11 @@
 
 .button.favorites {
   width: 173px;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .button.active {
