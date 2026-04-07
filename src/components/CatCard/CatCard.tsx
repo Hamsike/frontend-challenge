@@ -17,7 +17,7 @@ export const CatCard: React.FC<CatCardProps> = ({ cat }) => {
     state.favorites.items.some(catFavorite => catFavorite.id === cat.id)
   );
 
-  const handleLikeClick = (e: React.MouseEvent) => {
+  const handleLikeClick = () => {
     dispatch(addFavourite(cat));
   };
 
