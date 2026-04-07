@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  width: 100%;
+  max-height: 64px;
+  background-color: #2196F3;
+  padding-left: 62px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
+.button {
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 23px 0;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.button span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.25px;
+}
+
+.button.main {
+  width: 120px;
+}
+
+.button.favorites {
+  width: 173px;
+}
+
+.button.active {
+  color: #fff;
+  background-color: #1E88E5;
+}

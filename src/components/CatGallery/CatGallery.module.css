@@ -1,0 +1,174 @@
+.catsGrid {
+  padding: 62px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 225px);
+  align-items: start;
+  gap: 33px;
+  justify-content: center;
+  animation: fadeIn 0.5s ease;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.catsGrid > * {
+  animation: cardAppear 0.5s ease backwards;
+}
+
+@keyframes cardAppear {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .catsGrid {
+    padding: 40px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catsGrid {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catsGrid {
+    padding: 20px 15px;
+    gap: 15px;
+  }
+}
+
+.catsGrid:empty {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catsGrid:empty::after {
+  content: "😿 Нет котиков";
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+}
+
+.catsGrid {
+  scroll-margin-top: 20px;
+}
+
+.catsGrid .catCard {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.galleryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.loadMoreTrigger {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  min-height: 100px;
+}
+
+.loadingMore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.smallLoader {
+  font-size: 32px;
+  animation: bounce 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.endMessage {
+  text-align: center;
+  padding: 60px 0;
+  color: #666;
+  font-size: 18px;
+  width: 100%;
+}
+
+.endMessage p {
+  animation: fadeIn 0.5s ease;
+}
+
+.loaderContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.loader {
+  font-size: 48px;
+  animation: bounce 0.5s ease infinite;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 20px;
+  text-align: center;
+}
+
+.catsGrid::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.catsGrid:has(+ .loadMoreTrigger:hover)::after {
+  opacity: 1;
+}
