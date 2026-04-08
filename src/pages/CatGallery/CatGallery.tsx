@@ -1,7 +1,6 @@
-// components/CatGallery.tsx
 import React, { useCallback, useRef, useEffect } from 'react';
 import { useInfiniteCats } from '@/hooks/useCats';
-import { CatCard } from '@/components/CatCard/CatCard'
+import { CatCard } from '@/components/CatCard/CatCard';
 import styles from './CatGallery.module.css'
 
 

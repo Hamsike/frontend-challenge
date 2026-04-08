@@ -30,6 +30,7 @@
 
 .button span {
   font-family: 'Roboto', sans-serif;
+  font-display: swap;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;

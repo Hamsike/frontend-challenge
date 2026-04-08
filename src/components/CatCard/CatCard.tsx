@@ -1,4 +1,3 @@
-// components/CatCard.tsx
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { addFavourite, removeFavourite } from '@/slices/favouritesSlice';

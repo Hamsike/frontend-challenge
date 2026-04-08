@@ -1,4 +1,3 @@
-// store/favouritesSlice.ts
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import type { CatImage } from '@/types';
 
