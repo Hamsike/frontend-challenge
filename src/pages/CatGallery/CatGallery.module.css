@@ -1,7 +1,7 @@
 .catsGrid {
   padding: 50px 62px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 225px);
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   align-items: start;
   gap: 33px;
   justify-content: center;
@@ -39,26 +39,6 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .catsGrid {
-    padding: 50px 40px;
-    gap: 28px;
-  }
-}
-
-@media (max-width: 768px) {
-  .catsGrid {
-    padding: 50px 20px;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .catsGrid {
-    padding: 50px 15px;
-    gap: 15px;
-  }
-}
 
 .catsGrid:empty {
   min-height: 400px;

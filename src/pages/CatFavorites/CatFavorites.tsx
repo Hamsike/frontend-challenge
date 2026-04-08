@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/hooks/redux"
 import styles from './CatFavorites.module.css'
-import { CatCard } from "../CatCard/CatCard";
+import { CatCard } from "../../components/CatCard/CatCard";
 
 export const CatFavorites: React.FC = () => {
   const favorites = useAppSelector(state => state.favorites.items)

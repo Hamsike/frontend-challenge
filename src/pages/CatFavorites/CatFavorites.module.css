@@ -10,7 +10,7 @@
 .catsGrid {
   padding: 50px 60px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 225px);
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   align-items: start;
   gap: 33px;
   justify-content: center;
@@ -87,10 +87,6 @@
 }
 
 @media (max-width: 768px) {
-  .catsGrid {
-    padding: 50px 30px;
-    gap: 20px;
-  }
   
   .emptyIcon {
     font-size: 60px;
@@ -106,10 +102,6 @@
 }
 
 @media (max-width: 480px) {
-  .catsGrid {
-    padding: 50px 20px;
-    gap: 15px;
-  }
   
   .emptyIcon {
     font-size: 50px;
