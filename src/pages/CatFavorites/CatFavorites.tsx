@@ -20,7 +20,7 @@ export const CatFavorites: React.FC = () => {
         <div className={styles.emptyFavorites}>
           <div className={styles.emptyIcon}>😿</div>
           <h3>Нет избранных котиков</h3>
-          <p>Добавьте котиков в избранное, нажав на сердечко 🐱</p>
+          <p>Добавьте котиков в избранное, нажав на сердечко ❤️</p>
         </div>
       )}
     </div>

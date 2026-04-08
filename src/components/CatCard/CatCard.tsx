@@ -1,5 +1,5 @@
 // components/CatCard.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 import { addFavourite, removeFavourite } from '@/slices/favouritesSlice';
 import type { CatImage } from '@/types';
@@ -11,7 +11,6 @@ interface CatCardProps {
 
 export const CatCard: React.FC<CatCardProps> = ({ cat }) => {
   const dispatch = useAppDispatch();
-  const [isHoveringHeart, setIsHoveringHeart] = useState(false)
 
   const isFavourite = useAppSelector((state) =>
     state.favorites.items.some(catFavorite => catFavorite.id === cat.id)
@@ -35,11 +34,9 @@ export const CatCard: React.FC<CatCardProps> = ({ cat }) => {
         />
         <div 
           onClick={isFavourite ? handleRemoveClick : handleLikeClick}
-          onMouseEnter={() => setIsHoveringHeart(true)}
-          onMouseLeave={() => setIsHoveringHeart(false)}
           className={styles.heart}
         >
-          {!isFavourite && !isHoveringHeart && (
+          {!isFavourite && (
             <svg
               width="40"
               height="37"
@@ -53,7 +50,7 @@ export const CatCard: React.FC<CatCardProps> = ({ cat }) => {
               />
             </svg>
           )}
-          {(isFavourite || isHoveringHeart) && (
+          {isFavourite && (
             <svg
               width="40"
               height="37"
